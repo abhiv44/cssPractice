@@ -118,14 +118,14 @@ class LoanFields extends React.Component {
                                         <a className="f6 fw4 hover-black no-underline black dn dib-ns pv2 ph3" href="/" >LOGIN</a>
                                     </div>
                                 </nav>
-                                <div className="w-50 mt5 pl1 tc">
+                                <div className="w-50 mt5 pr5 pt2 tc">
                                     <img src={a} />
                                 </div>
-                                <div className="tc">
+                                <div className="tc mt3">
                                     <h1 class=" f-headline-l measure-narrow  white mv0">
                                         THE BEST FOODIE EXPERIENCE
                                 </h1>
-                                    <h1 className="fw1 f2 white mt3 mb4">NOW IN LONDON</h1>
+                                    <h1 className="fw6 f2 white mt3 mb4">NOW IN LONDON</h1>
                                 </div>
                             </div>
                         </div>
