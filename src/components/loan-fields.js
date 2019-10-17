@@ -121,6 +121,9 @@ class LoanFields extends React.Component {
                                 <div className="w-50 mt5 pr5 pt2 tc">
                                     <img src={a} />
                                 </div>
+                                <div className='fixed'>
+                                    scrollSpy
+                                </div>
                                 <div className="tc mt3">
                                     <h1 class=" f-headline-l measure-narrow  white mv0">
                                         THE BEST FOODIE EXPERIENCE
