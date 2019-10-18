@@ -1,11 +1,10 @@
 import * as React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import './loan-field.css'
-import { LoanAction } from '../redux/action/loan-action'
 import { connect } from 'react-redux'
 import * as a from '../files/assets/stamp.png'
-import * as mapImage from '../files/assets/map.png'
 import * as locationPointer from '../files/assets/location-icon.png'
+import Scrollspy from 'react-scrollspy'
 const styles = theme => ({
     slider: {
         width: '50%'
@@ -33,76 +32,15 @@ class LoanFields extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            interest: "",
-            amount: "",
-            disabled: false,
-            monthlyPayment: undefined,
-            rate: undefined
+            active: 0,
+            sections: []
         }
-
-    }
-
-
-    handleAmount = (event) => {
-        this.setState({
-            amount: event.target.value,
-            disabled: false
-        })
-
-    }
-
-    handleInterest = (event) => {
-        this.setState({
-            interest: event.target.value,
-            disabled: false
-        })
-    }
-    handleSlider = (event, newValue) => {
-        const loanValue = {
-            amount: newValue,
-            numMonths: this.state.interest
-        }
-
-        this.setState({
-            amount: newValue,
-            disabled: true,
-            monthlyPayment: undefined,
-            rate: undefined
-        })
-        if (this.state.interest) {
-            this.props.dispatch(LoanAction(loanValue))
-        }
-    }
-
-    handleLoan = () => {
-        // console.log(value)
-        const loanValue = {
-            amount: this.state.amount,
-            numMonths: this.state.interest
-        }
-        this.props.dispatch(LoanAction(loanValue))
-        this.setState({
-            disabled: true,
-            monthlyPayment: undefined,
-            rate: undefined
-        })
-    }
-    handleSelect = (amount, duration, monthlyPayment, rate) => {
-        this.setState({
-            amount,
-            interest: duration,
-            monthlyPayment,
-            rate
-        })
-    }
-    handleSubmit = () => {
-        console.log("submitted")
     }
 
     render() {
         return (
             <div className='cf'>
-                <section id='header'>
+                <section id='s-1'>
                     <header>
                         <div className="cover bg-left bg-center-l customImage">
                             <div className="pb5 pb6-m pb7-l">
@@ -124,7 +62,12 @@ class LoanFields extends React.Component {
                                     <img src={a} />
                                 </div>
                                 <div className='fixed'>
-                                    scrollSpy
+                                    <Scrollspy
+                                        items={['s-1', 's-2']}
+                                        currentClassName="is-active">
+                                        <li><a href="#s-1"> 1</a></li>
+                                        <li><a href="#s-2"> 2</a></li>
+                                    </Scrollspy>
                                 </div>
                                 <div className="tc mt3">
                                     <h1 class=" f-headline-l measure-narrow  white mv0">
@@ -136,7 +79,7 @@ class LoanFields extends React.Component {
                         </div>
                     </header>
                 </section>
-                <section>
+                <section id='s-2'>
                     <div className='bimage'>
                         <div className='w-20 pt4 ml5'>
                             <div className='bg-white containerMap'>
