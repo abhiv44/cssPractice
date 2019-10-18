@@ -1,6 +1,31 @@
 .customImage{
 background-image: url('../files/assets/bg-pic.png')
 }
+.bimage{
+    background-image: url('../files/assets/map.png');
+    padding:30px;
+    width:'-webkit-fill-available';
+    height:450px;
+    background-repeat: round
+
+}
+.centeredMapIcon {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.containerMap {
+    padding:15px;
+  position: relative;
+  text-align: center;
+}
+.mapText {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
 .bl {
     border-left-style: solid;
     border-left-width: 1px;

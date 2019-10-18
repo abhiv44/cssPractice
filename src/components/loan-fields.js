@@ -4,6 +4,8 @@ import './loan-field.css'
 import { LoanAction } from '../redux/action/loan-action'
 import { connect } from 'react-redux'
 import * as a from '../files/assets/stamp.png'
+import * as mapImage from '../files/assets/map.png'
+import * as locationPointer from '../files/assets/location-icon.png'
 const styles = theme => ({
     slider: {
         width: '50%'
@@ -100,7 +102,7 @@ class LoanFields extends React.Component {
     render() {
         return (
             <div className='cf'>
-                <div className="">
+                <section id='header'>
                     <header>
                         <div className="cover bg-left bg-center-l customImage">
                             <div className="pb5 pb6-m pb7-l">
@@ -133,8 +135,21 @@ class LoanFields extends React.Component {
                             </div>
                         </div>
                     </header>
-                </div>
-                <div>def</div>
+                </section>
+                <section>
+                    <div className='bimage'>
+                        <div className='w-20 pt4 ml5'>
+                            <div className='bg-white containerMap'>
+                                <h2 className='centeredMapIcon'>LOCATION </h2>
+                                12 Upper St. Martin’s Lane <br />
+                                WC2H 9FB, London
+                            </div>
+                        </div>
+                        <div className='w-50 tr'>
+                            <img src={locationPointer} />
+                        </div>
+                    </div>
+                </section>
             </div>
         )
     }
